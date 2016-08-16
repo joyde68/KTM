@@ -1,0 +1,72 @@
+{{template "header" .}}
+
+<div class="content">
+    <div class="wrapp">
+        {{range .Articles}}
+        <div class="post">
+            <div class="top">
+                <div class="title">
+                    <a class="p-title" title="{{.Title}}" href="{{.Site.Url}}/{{.Link}}" rel="bookmark">
+                        <i class="fa fa-file-text-o"></i>{{.Title}}
+                    </a>
+                </div>
+                <div class="info">
+                    <div class="white">
+                        {{if .Update}}
+                            <span><span class="date" data-time="{{.Update}}"></span>&nbsp;更新</span>
+                        {{else}}
+                            <span class="date" data-time="{{.Date}}"></span>
+                        {{end}}
+                        <span class="dot">-</span>
+                        <span class="comment ds-thread-count" data-thread-key="{{.Link}}" data-count-type="comments"></span>
+                        <span class="dot">-</span>
+                        <span class="category">
+                            <ul class="post-categories">
+                                <li>
+                                    {{.Author.Name}}
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {{if .Preview}}<div class="entry">{{.Preview}}</div>{{end}}
+            <div class="bottom">
+                <div class="left">
+                    <a class="more ripple" href="{{.Site.Url}}/{{.Link}}">
+                        <i class="fa fa-caret-square-o-right"></i>阅读全文</a>
+                </div>
+                <div class="right">
+                    <div class="tag">
+                        {{range .Tags}}
+                            <a href="{{$.Site.Root}}/tag/{{.}}/index.html" title="{{.}}">{{.}}</a>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+        <div class="page-navi">
+            <span class="line-left line"></span>
+            <div class="white">
+                <li>
+                    <ol class="page-navigator">
+                        {{if .Prev}}
+                            <li class="prev">
+                                <a href="{{.Site.Url}}/{{.Prev}}">上一页</a>
+                            </li>
+                        {{end}}
+                        {{if .Next}}
+                            <li class="next current" >
+                                <a href="{{.Site.Url}}/{{.Next}}">下一页</a>
+                            </li>
+                        {{end}}
+                    </ol>
+                </li>
+            </div>
+            <span class="line-right line"></span>
+        </div>
+    </div>
+</div>
+
+{{template "footer" .}}

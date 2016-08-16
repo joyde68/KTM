@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="{{.Site.Root}}/theme/favicon.ico">
+        {{if .Title}}
+            <title>{{.Title}} - {{.Site.Title}}</title>
+        {{else}}
+            <title>{{.Site.Title}} - {{.Site.Subtitle}}</title>
+        {{end}}
+        {{if .Cover}}
+            <meta name="keywords" content="{{.Cover}}" />
+        {{else}}
+            <meta name="keywords" content="酷瞄,进阶博客,Typecho教程,福利分享" />
+        {{end}}
+        {{if .Preview}}
+            <meta name="description" content="{{.Preview}}" />
+        {{else}}
+            <meta name="description" content="本博博主为酷喵，创“见”于2016年7月20日。主要分享Typecho教程以及各种福利资源，也包括酷喵自己的日记。我不生产资源，我只是IT界的一届码农。" />
+        {{end}}
+        <link href="{{.Site.Root}}/theme/style.css" rel="stylesheet" />
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"></head>
+    <body class="custom-background">
+        <div class="main">
+            <div class="header">
+                <div class="title">
+                    <a href="{{.Site.Url}}">{{.Site.Title}}</a></div>
+                <div class="navigation">
+                    {{template "menu" .}}
+                    <div class="default">
+                        <ul>
+                            <li class="line">
+                                <span></span>
+                            </li>
+                            <li class="search">
+                                <a title="搜索">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </li>
+                            <li class="rss">
+                                <a href="{{.Site.Url}}/atom.xml" title="订阅本站" target="_blank">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="search-form">
+                    <span class="dot"></span>
+                    <form id="searchform" class="searchform" action="{{.Site.Root}}/" method="post" role="Search">
+                        <sanp>搜索功能暂时关闭。</sanp>
+                    </form>
+                </div>
+            </div>
+            <div class="secHeader">
+                <i class="fa fa-bullhorn"></i>浪里个浪，博客改版完毕啦！除了一些小问题还没解决外，其他已基本搞定。纯静态，倍儿爽～
+            </div>

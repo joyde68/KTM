@@ -1,0 +1,3 @@
+# Copied files to public folder when build
+copy:
+    - theme

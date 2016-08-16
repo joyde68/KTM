@@ -1,0 +1,71 @@
+{{template "header" .}}
+
+<div class="content">
+    <div class="float-nav">
+        <ul class="ex-menu">
+            <li>
+                <a onclick="goToTop();">回到顶部</a>
+                <i class="fa fa-arrow-up"></i>
+            </li>
+        </ul>
+        <a class="top" title="发表评论" onclick="showReplyForm();">
+            <i class="fa fa-comments"></i>
+        </a>
+    </div>
+    <div class="wrapp">
+        <div class="page">
+            <div class="top">
+                <div class="title">
+                    <a class="p-title" title="{{.Title}}" rel="bookmark">
+                        <i class="fa fa-file-text-o"></i>{{.Title}}</a>
+                </div>
+                <div class="info">
+                    <div class="white">
+                        {{if .Update}}
+                            <span><span class="date" data-time="{{.Update}}"></span>&nbsp;更新</span>
+                        {{else}}
+                            <span class="date" data-time="{{.Date}}"></span>
+                        {{end}}
+                        <span class="dot">-</span>
+                        <span class="comment ds-thread-count" data-thread-key="{{.Link}}" data-count-type="comments"></span>
+                        <span class="dot">-</span>
+                        <span class="category">
+                            <ul class="post-categories">
+                                <li>
+                                    {{.Author.Name}}
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="entry">
+                {{.Content}}
+            </div>
+        </div>
+        <div class="comments-wrapp">
+            <div class="topbar">
+                <div class="wrapp">
+                    <div class="left">
+                        <li class="num">
+                            <a>评论 (3条)</a>
+                        </li>
+                        <li class="write">
+                            <a class="reShow" onclick="showReplyForm()">
+                                <i class="fa fa-pencil-square-o"></i>发表评论
+                            </a>
+                        </li>
+                    </div>
+                    <div class="right">
+                        {{range .Tags}}
+                            <a href="{{$.Site.Root}}/tag/{{.}}/index.html" title="{{.}}">{{.}}</a>
+                        {{end}}
+                    </div>
+                </div>
+            </div>
+            {{template "comment" .}}
+        </div>
+    </div>
+</div>
+
+{{template "footer" .}}

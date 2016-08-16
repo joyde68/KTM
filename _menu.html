@@ -1,0 +1,40 @@
+<div class="left">
+    <ul class="menu">
+        <li>
+            <a href="{{.Site.Url}}">
+                <i class="fa fa-home"></i>首页
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.Url}}/archive.html">
+                <i class="fa fa-link"></i>归档
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.Url}}/tag.html">
+                <i class="fa fa-link"></i>标签
+            </a>
+        </li>
+        <li>
+            <a href="{{.Site.Url}}/kumiao.html">
+                <i class="fa fa-link"></i>关于
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="mobile">
+    <ul>
+        <li>
+            <a class="mobile-menu-toggle" title="菜单">
+                <i class="fa fa-th-list"></i>
+            </a>
+            <select class="mobile-menu-drop" id="m-menu" onchange="location.href=this.value">
+                <option value="{{.Site.Url}}">首页</option>
+                <option value="{{.Site.Url}}/archive.html">归档</option>
+                <option value="{{.Site.Url}}/tag.html">标签</option>
+                <option value="{{.Site.Url}}/kumiao.html">关于</option>
+            </select>
+        </li>
+    </ul>
+</div>

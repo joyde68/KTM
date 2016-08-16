@@ -1,0 +1,50 @@
+{{template "header" .}}
+
+      <div class="content">
+        <div class="float-nav">
+          <ul class="ex-menu">
+            <li>
+              <a onclick="goToTop();">回到顶部</a>
+              <i class="fa fa-arrow-up"></i>
+            </li>
+          </ul>
+          <a class="top" title="发表评论" onclick="showReplyForm();">
+            <i class="fa fa-comments"></i>
+          </a>
+        </div>
+        <div class="wrapp">
+          <div class="page">
+            <div class="top">
+              <div class="title">
+                <a class="p-title" title="归档" rel="bookmark">
+                  <i class="fa fa-file-text-o"></i>归档</a>
+              </div>
+              <div class="info">
+                <div class="white">
+                  <span class="date">2016/08/03</span>
+                  <span class="dot">-</span>
+                  <span class="comment">32 条评论</span></div>
+              </div>
+            </div>
+            <div class="entry">
+                <ul>
+                    {{range .Archive}}
+                    <li>
+                        <b>{{.Year}}</b>
+                        <ul>
+                            {{range .Articles}}
+                            <li>
+                                <span>{{.Date}}</span>
+                                <a href="{{.Link}}" title="{{.Title}}">{{.Title}}</a>
+                            </li>
+                            {{end}}
+                        </ul>
+                    </li>
+                    {{end}}
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{{template "footer" .}}
