@@ -94,7 +94,9 @@ textarea {
 .main .header {
     width: 100%;
     height: 105px;
-    background: url("https://i1.piimg.com/4851/dea9eb0b0e29380b.jpg") no-repeat;
+    background: 
+url("images/head-background.png") 
+no-repeat center;
     line-height: 105px;
     position: relative;
 }

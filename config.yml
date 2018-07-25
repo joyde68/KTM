@@ -1,3 +1,4 @@
 # Copied files to public folder when build
 copy:
-    - theme
+    - source
+    - robots.txt

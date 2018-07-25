@@ -13,13 +13,16 @@
                 <div class="info">
                     <div class="white">
                         {{if .Update}}
-                            <span><span class="date" data-time="{{.Update}}"></span>&nbsp;更新</span>
+            	<span>更新于&nbsp;</span><span 
+class="date" data-time="{{.Update}}"></span>
                         {{else}}
-                            <span class="date" data-time="{{.Date}}"></span>
+                            <span>发表于&nbsp;</span><span class="date" data-time="{{.Date}}"></span>
                         {{end}}
                         <span class="dot">-</span>
-                        <span class="comment ds-thread-count" data-thread-key="{{.Link}}" data-count-type="comments"></span>
-                        <span class="dot">-</span>
+                        <!--span 
+class="comment ds-thread-count" data-thread-key="{{.Link}}" data-count-type="comments"></span>
+                        <span 
+class="dot">-</span-->
                         <span class="category">
                             <ul class="post-categories">
                                 <li>
